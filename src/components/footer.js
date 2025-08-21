@@ -5,7 +5,7 @@ function Footer() {
       <ul className="footer-links">
         {pageLinks.map((link) => {
           return (
-            <li>
+            <li key={link.id}>
               <a href={link.href} className="footer-link">
                 {link.text}
               </a>
@@ -16,7 +16,7 @@ function Footer() {
       <ul className="footer-icons">
         {pageIcons.map((icon) => {
           return (
-            <li>
+            <li key={icon.id}>
               <a
                 href="https://www.twitter.com"
                 target="_blank"
@@ -31,7 +31,7 @@ function Footer() {
       </ul>
       <p className="copyright">
         copyright &copy; Backroads travel tours company
-        <span id="date"></span> all rights reserved
+        <span id="date">{new Date().getFullYear()}</span> all rights reserved
       </p>
     </footer>
   )
